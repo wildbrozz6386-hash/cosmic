@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #161A26;
+    --paper: #EFEDE5;
+    --paper-2: #E4E1D6;
+    --orange: #FF5A33;
+    --teal: #1F8F82;
+    --yellow: #F4B400;
+    --line: rgba(22, 26, 38, 0.14);
+    --text-soft: rgba(22, 26, 38, 0.65);
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-mono-code {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Registration crosshair motif */
+.reg-mark {
+  position: relative;
+}
+.reg-mark::before,
+.reg-mark::after {
+  content: "+";
+  position: absolute;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--text-soft);
+  opacity: 0.6;
+}
+.reg-mark.tl::before { top: -6px; left: -6px; }
+.reg-mark.tr::after { top: -6px; right: -6px; }
+.reg-mark.bl::before { bottom: -6px; left: -6px; }
+.reg-mark.br::after { bottom: -6px; right: -6px; }
+
+/* Custom marquee animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom pulse animation for WhatsApp floating button */
+@keyframes waPulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.animate-wa-pulse {
+  animation: waPulse 2.2s ease-out infinite;
+}
+
+/* Smooth scrolling with offset for fixed header */
+html {
+  scroll-behavior: smooth;
+}
+
+section, [id] {
+  scroll-margin-top: 90px;
+}
