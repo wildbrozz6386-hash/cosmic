@@ -2,19 +2,19 @@
 
 @layer base {
   :root {
-    --ink: #161A26;
-    --paper: #EFEDE5;
-    --paper-2: #E4E1D6;
-    --orange: #FF5A33;
-    --teal: #1F8F82;
-    --yellow: #F4B400;
-    --line: rgba(22, 26, 38, 0.14);
-    --text-soft: rgba(22, 26, 38, 0.65);
+    --ink: #FFFFFF;
+    --paper: #000000;
+    --paper-2: #0A0A0A;
+    --orange: #FFFFFF;
+    --teal: #FFFFFF;
+    --yellow: #FFFFFF;
+    --line: rgba(255, 255, 255, 0.2);
+    --text-soft: rgba(255, 255, 255, 0.85);
   }
 
   body {
-    background-color: var(--paper);
-    color: var(--ink);
+    background-color: #000000;
+    color: #FFFFFF;
     font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -23,6 +23,7 @@
   h1, h2, h3, h4, .font-display {
     font-family: 'Anton', sans-serif;
     letter-spacing: 0.02em;
+    color: #FFFFFF;
   }
 
   .font-mono-code {
@@ -30,7 +31,7 @@
   }
 }
 
-/* Registration crosshair motif */
+/* Registration crosshair motif in crisp white */
 .reg-mark {
   position: relative;
 }
@@ -40,8 +41,8 @@
   position: absolute;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 14px;
-  color: var(--text-soft);
-  opacity: 0.6;
+  color: #FFFFFF;
+  opacity: 0.7;
 }
 .reg-mark.tl::before { top: -6px; left: -6px; }
 .reg-mark.tr::after { top: -6px; right: -6px; }
@@ -77,6 +78,8 @@
 /* Smooth scrolling with offset for fixed header */
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 section, [id] {
